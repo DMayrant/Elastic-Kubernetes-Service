@@ -101,6 +101,6 @@ kubectl exec -it <pod-name> -- sh
 curl http://<svc-name>
 ```
 
-[!image alt](https://github.com/DMayrant/Elastic-Kubernetes-Service/blob/main/EKS.jpeg?raw=true)
+![image alt](https://github.com/DMayrant/Elastic-Kubernetes-Service/blob/main/EKS.jpeg?raw=true)
 
 

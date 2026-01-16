@@ -4,21 +4,21 @@ EKS is a fully managed service by AWS responsible for managing the Kubernetes Co
 
 In kubernetes a pod is a smallest single deployable resource. A pod consist of one or containers, a local host, pod directories and persistent volumes. In Kubernetes every deployment, service, or configmap is based on a YAML❗️ configuration file. Its best practice to install health probes in your containers to help monitor container status. 
 
-# AWS is responsible for
+# AWS is responsible for 📊
 
 - Kubernetes API server
 - Schedular
 - Control Manager
 - Control plane availability and scaling 
 
-# Kubernetes Control Plane (scheduling)
+# Kubernetes Control Plane (scheduling) 🏗️
 
 - Kubernetes API
 - Key/Value store
 - Kube Schedular 
 - authorization and authentication permission policies 
 
-# Kubernetes Data Plane (execution) 
+# Kubernetes Data Plane (execution) 🔧
 
 - Worker nodes
 - kube proxy 

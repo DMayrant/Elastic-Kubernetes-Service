@@ -282,17 +282,6 @@ pipeline {
                 '''
             }
         }
-        stage ('Cleanup') {
-            steps {
-                sh '''
-                set -euo pipefail
-
-                kubectl delete -f nginx-deploy.yaml --ignore-not-found=true 
-                kubectl delete -f nginx.svc --ignore-not-found=true 
-                kubectl delete -f curl.yaml --ignore-not-found=true 
-                '''
-            }
-        }
         stage ('Terraform Destroy') {
             when {
                 expression { params.ACTION == 'destroy' }

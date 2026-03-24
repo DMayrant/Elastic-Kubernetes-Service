@@ -8,5 +8,12 @@ crash.log
 *.tfvars
 *.tfvars.json
 
+
 # OS files
 .DS_Store
+
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfstate.backup

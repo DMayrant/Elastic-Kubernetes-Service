@@ -75,13 +75,21 @@ pipeline {
                 '''
             }
         }
+        stage ('Clean Terraform') {
+            steps {
+                sh '''
+                rm -rf .terraform
+                rm -f terraform.tfstate*
+                '''
+            }
+        }
         stage ('Terraform init') {
             steps {
                 sh '''
                 set -euo pipefail 
 
                 echo 'Running Terraform init...'
-                terraform init 
+                terraform init -reconfigure
                 '''
             }
         }

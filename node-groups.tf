@@ -24,7 +24,7 @@ resource "aws_eks_node_group" "default" {
   }
 
   tags = {
-    Name = "eks-node-group-default"
+    Name = "EKS-Nodes"
   }
 
   depends_on = [

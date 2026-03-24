@@ -3,7 +3,7 @@
 ############################################
 
 resource "aws_s3_bucket" "tf_state" {
-  bucket = "devops-tf-state-9711"
+  bucket        = "devops-tf-state-9711"
   force_destroy = true
 
   tags = {

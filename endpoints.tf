@@ -6,10 +6,10 @@ resource "aws_vpc_endpoint" "ssm" {
   security_group_ids  = [aws_security_group.ssm_endpoints_sg.id]
   private_dns_enabled = true
 
-  tags = { 
-    Name = "ssm-endpoint" 
-    
-    }
+  tags = {
+    Name = "ssm-endpoint"
+
+  }
 }
 
 resource "aws_vpc_endpoint" "worker_node_messages" {
@@ -20,10 +20,10 @@ resource "aws_vpc_endpoint" "worker_node_messages" {
   security_group_ids  = [aws_security_group.ssm_endpoints_sg.id]
   private_dns_enabled = true
 
-  tags = { 
-    Name = "Worker-Node-messages-endpoint" 
-    
-    }
+  tags = {
+    Name = "Worker-Node-messages-endpoint"
+
+  }
 }
 
 resource "aws_vpc_endpoint" "ssmmessages" {
@@ -34,7 +34,7 @@ resource "aws_vpc_endpoint" "ssmmessages" {
   security_group_ids  = [aws_security_group.ssm_endpoints_sg.id]
   private_dns_enabled = true
 
-  tags = { 
-    Name = "ssm messages-endpoint" 
-    }
+  tags = {
+    Name = "ssm messages-endpoint"
+  }
 }

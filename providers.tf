@@ -6,7 +6,7 @@ terraform {
 
     }
 
-    kubernetes = { 
+    kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "~> 3.0.1"
     }
@@ -20,4 +20,4 @@ terraform {
 }
 provider "aws" {
   region = "us-east-1"
-}   
+}

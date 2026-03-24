@@ -8,7 +8,7 @@ resource "aws_lb" "alb" {
     bucket  = aws_s3_bucket.alb_logs.bucket
     prefix  = "alb"
     enabled = true
-    
+
   }
 
   security_groups = [aws_security_group.alb_sg.id]

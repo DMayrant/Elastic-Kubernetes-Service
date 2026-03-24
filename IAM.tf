@@ -159,7 +159,7 @@ resource "aws_iam_role" "jenkins_role" {
       {
         Effect = "Allow"
         Principal = {
-          Service = "ec2.amazonaws.com"   # change if using something else
+          Service = "ec2.amazonaws.com" # change if using something else
         }
         Action = "sts:AssumeRole"
       }

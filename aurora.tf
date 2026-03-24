@@ -1,7 +1,7 @@
 resource "aws_rds_cluster" "aurora_cluster" {
   cluster_identifier      = "aurora-cluster-${var.env}"
   engine                  = var.engine # aurora-postgresql
-  engine_mode             = "provisioned" 
+  engine_mode             = "provisioned"
   master_username         = var.db_username
   master_password         = var.db_password
   db_subnet_group_name    = aws_db_subnet_group.aurora_subnet_group.name

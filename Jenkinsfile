@@ -42,20 +42,6 @@ pipeline {
                 '''
             }
         }
-        stage ('Debug Files') {
-            steps {
-                sh '''
-                echo "=== CURRENT DIR ==="
-                pwd
-
-                echo "=== FILES ==="
-                ls -lah
-
-                echo "=== RECURSIVE ==="
-                find . -name "*.json"
-                '''
-            }
-        }
         stage ('Terraform Version') {
             steps {
                 sh '''

@@ -194,7 +194,7 @@ pipeline {
             }
 
         }
-        stage ('Manifest Scaffold') {
+        stage ('YAML Files') {
             when {
                 expression { params.ACTION == 'apply' }
             } 

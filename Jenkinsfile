@@ -212,7 +212,7 @@ pipeline {
 
                 kubectl rollout status deployment nginx-deploy 
                 kubectl rollout history deployment nginx-deploy
-                kubectl logs deployment/nginx-deploy
+                kubectl logs deployment/nginx-deploy 
                 '''
             }
         }
@@ -239,7 +239,7 @@ pipeline {
                 '''
             }
         }
-        stage ('Kube-bench Scan') {
+        stage ('Kubescape Scan') {
             when {
                 expression { params.ACTION == 'apply' }
             }
@@ -247,16 +247,8 @@ pipeline {
                 sh '''
                 set -euo pipefail 
 
-                echo 'Running Kube-bench...'
-                
-                docker run --rm \
-                --pid=host \
-                -v /etc:/etc:ro \
-                -v /var:/var:ro \
-                -v /usr:/usr:ro \
-                -v /boot:/boot:ro \
-                aquasec/kube-bench:latest \
-                --json > kube-bench.json || true
+                echo 'Running Kubescape scan...'
+                kubescape scan framework nsa,mitre || true
                 '''
             }
         }

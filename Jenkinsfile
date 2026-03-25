@@ -222,7 +222,7 @@ pipeline {
             }
             steps {
                 sh'''
-                kubectl port-forward svc/nginx-deploy 3000:80
+                kubectl port-forward svc/nginx-deploy 3000:80 > pf.log 2>&1 &
                 PF_PID=$!
 
                 echo 'waiting for service...'

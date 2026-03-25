@@ -19,6 +19,7 @@ resource "aws_ssm_document" "session_manager_settings" {
       s3BucketName                = aws_s3_bucket.vpc_logs.bucket
       s3KeyPrefix                 = "session-logs/"
       cloudWatchEncryptionEnabled = false
+      cloudWatchLogGroupName      = "/aws/ssm/session-manager"
     }
   })
 }

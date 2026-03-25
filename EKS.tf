@@ -12,7 +12,7 @@ resource "aws_eks_cluster" "main" {
     ]
 
     endpoint_private_access = true
-    endpoint_public_access  = false # production Env this must be set to false 
+    endpoint_public_access  = true # production Env this must be set to false 
 
     #public_access_cidrs = ["<LocalMachine-publicIP>/32"] # only allow /32 cidr to give One public IP address access to Kubernetes API  
   }

@@ -230,7 +230,7 @@ pipeline {
                 
                 echo 'Running ZAP scan...'
                 docker run --rm \
-                -t owasp/zap2docker-stable zap-baseline.py \
+                -t zaproxy/zap-stable zap-baseline.py \
                 -t http://localhost:3000 \
                 -r zap-report.html || true
 

@@ -238,6 +238,8 @@ pipeline {
                 kubectl port-forward svc/nginx-deploy 3000:80
                 PF_PID=$!
 
+                echo 'waiting for service...'
+                sleep 5
                 echo 'Running ZAP scan...'
 
                 docker run --rm \

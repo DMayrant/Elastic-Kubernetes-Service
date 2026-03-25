@@ -197,7 +197,6 @@ pipeline {
 
                 kubectl run curl --image=curlimages/curl:7.83.0 \
                 --restart=Never --dry-run=client -o yaml > curl.yaml
-
                 '''
             }
         }
@@ -240,13 +239,15 @@ pipeline {
 
                 echo 'waiting for service...'
                 sleep 5
+                
                 echo 'Running ZAP scan...'
-
                 docker run --rm \
                 -t owasp/zap2docker-stable zap-baseline.py \
                 -t http://localhost:3000 \
                 -r zap-report.html || true
-                kill $PF_PID
+
+                echo 'terminating port-forward...'
+                kill $PF_PID || true
                 '''
             }
         }

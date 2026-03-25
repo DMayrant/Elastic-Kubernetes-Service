@@ -189,7 +189,7 @@ pipeline {
             steps {
                 sh '''
                 set -euo pipefail 
-                trivy image --severity HIGH,CRITICAL nginx:1.28.0 || true
+                trivy image --timeout 10m --severity HIGH,CRITICAL nginx:1.28.0 || true
                 '''
             }
 

@@ -169,6 +169,16 @@ pipeline {
                 '''
             }
         }
+        stage ('Docker Pull') {
+            steps {
+                sh '''
+                set -euo pipefail 
+
+                echo 'Pulling image...'
+                docker pull nginx:1.28.0
+                '''
+            }
+        }
         stage ('Manifest Scaffold') {
             when {
                 expression { params.ACTION == 'apply' }

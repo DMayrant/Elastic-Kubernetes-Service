@@ -8,7 +8,7 @@ resource "aws_cloudwatch_log_group" "ssm_sessions" {
 }
 
 resource "aws_ssm_document" "session_manager_settings" {
-  name          = "SSM-SessionManager"
+  name          = "SSM-custom-session-manager"
   document_type = "Session"
 
   content = jsonencode({

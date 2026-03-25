@@ -192,11 +192,11 @@ pipeline {
                 kubectl create deployment nginx-deploy --image=nginx:1.28.0 \
                 --port=80 --replicas=5 --dry-run=client -o yaml > nginx-deploy.yaml
 
-                kubectl expose deployment nginx-deploy --port=80 --type=ClusterIP \
+                kubectl create service clusterip nginx-deploy --tcp=80:80 \
                 --dry-run=client -o yaml > nginx-svc.yaml
 
                 kubectl run curl --image=curlimages/curl:7.83.0 \
-                --dry-run=client -o yaml > curl.yaml
+                --restart=Never --dry-run=client -o yaml > curl.yaml
 
                 '''
             }

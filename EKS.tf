@@ -15,7 +15,6 @@ resource "aws_eks_cluster" "main" {
     endpoint_public_access  = true # production Env this must be set to false 
 
     # public_access_cidrs = ["49.230.84.177/32"] # only allow /32 cidr to give One public IP address access to Kubernetes API  
-
     # curl ifconfig.me
   }
 

@@ -75,14 +75,6 @@ pipeline {
                 '''
             }
         }
-        stage ('Clean Terraform') {
-            steps {
-                sh '''
-                rm -rf .terraform
-                rm -f terraform.tfstate*
-                '''
-            }
-        }
         stage ('Terraform init') {
             steps {
                 sh '''
@@ -299,7 +291,6 @@ pipeline {
                 set -euo pipefail 
 
                 echo 'Destroying terraform infrastructure and resources...'
-                terraform init 
                 terraform destroy -auto-approve
                 '''
             }

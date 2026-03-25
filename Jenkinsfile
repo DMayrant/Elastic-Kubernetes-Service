@@ -170,6 +170,9 @@ pipeline {
             }
         }
         stage ('Docker Pull') {
+            when {
+                expression { params.ACTION == 'apply' }
+            } 
             steps {
                 sh '''
                 set -euo pipefail 
@@ -178,6 +181,18 @@ pipeline {
                 docker pull nginx:1.28.0
                 '''
             }
+        }
+        stage ('Trivy Scan') {
+            when {
+                expression { params.ACTION == 'apply' }
+            } 
+            steps {
+                sh '''
+                set -euo pipefail 
+                trivy image --severity HIGH,CRITICAL nginx:1.29.0 || true
+                '''
+            }
+
         }
         stage ('Manifest Scaffold') {
             when {

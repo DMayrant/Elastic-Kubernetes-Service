@@ -30,18 +30,6 @@ pipeline {
                 '''
             }
         }
-        stage ('Debug Workspace') {
-            steps {
-                sh '''
-                echo '==DEBUG=='
-                echo 'PWD:'
-                pwd
-
-                echo 'FILES'
-                ls -lah
-                '''
-            }
-        }
         stage ('Terraform Version') {
             steps {
                 sh '''

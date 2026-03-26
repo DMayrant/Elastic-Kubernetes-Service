@@ -24,5 +24,5 @@ networking paths
 pods and containers
 kubelet
 
-![image alt](https://github.com/DMayrant/Elastic-Kubernetes-Service/blob/main/3-tier-private%20EKS.jpeg?raw=true)
+![image alt](https://github.com/DMayrant/Elastic-Kubernetes-Service/blob/main/Screenshot%202569-03-26%20at%2015.10.44.png?raw=true)
 

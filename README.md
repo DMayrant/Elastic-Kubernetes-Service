@@ -2,7 +2,7 @@
 
 EKS is a fully managed service by AWS responsible for managing the Kubernetes Control plane within your Kubernetes cluster. The customer is responsible for the data plane. 
 
-I've used Jenkins as a CI/CD server that contains 
+I used Jenkins to automate my Terraform workflow—plan, apply, and validation—and I embedded tfsec and Checkov directly into the pipeline so security checks run before anything gets deployed. That helped catch misconfigurations early and reduce risk in production.
 
 In kubernetes a pod is a smallest single deployable resource. A pod consist of one or more containers, a local host, pod directories and persistent volumes. In Kubernetes every deployment, service, or configmap is based on a YAML❗️ configuration files. Its best practice to install health probes in your containers to help monitor container status.
 

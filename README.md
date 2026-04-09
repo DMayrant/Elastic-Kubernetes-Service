@@ -6,6 +6,8 @@ I used Jenkins to automate my Terraform workflow—plan, apply, and validation�
 
 In kubernetes a pod is a smallest single deployable resource. A pod consist of one or more containers, a local host, pod directories and persistent volumes. In Kubernetes every deployment, service, or configmap is based on a YAML❗️ configuration files. Its best practice to install health probes in your containers to help monitor container status.
 
+In the Jenkins pipeline, I integrated multiple security tools like Trivy, Snyk, Docker Scout, Checkov, tfsec, and Kubescape. These run at different stages to scan container images, dependencies, and Terraform code for vulnerabilities and misconfigurations.
+
 - AWS is responsible for 📊
 Kubernetes API server
 Schedular

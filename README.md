@@ -42,3 +42,5 @@ terraform plan
 terraform apply
 ```
 
+![image alt](https://github.com/DMayrant/Datadog-Falco-Workloads/blob/main/3-tier-private%20EKS.jpeg?raw=true)
+

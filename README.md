@@ -1,26 +1,35 @@
-# Elastic Kubernetes Service EKS 🐳
+# Workload Threat Detection and Observability Platform 🐳
 
-EKS is a fully managed service by AWS responsible for managing the Kubernetes Control plane within your Kubernetes cluster. The customer is responsible for the data plane
+Amazon EKS is a fully managed Kubernetes service where AWS manages the Kubernetes control plane, while customers are responsible for managing the worker nodes (data plane), networking, workloads, and cluster security.
 
-In kubernetes a pod is a smallest single deployable resource. A pod consist of one or more containers, a local host, pod directories and persistent volumes. In Kubernetes every deployment, service, or configmap is based on a YAML❗️ configuration files. Its best practice to install health probes in your containers to help monitor container status.
+This platform deploys Datadog and Falco using Helm charts to provide centralized observability and Kubernetes runtime threat detection.
 
-- AWS is responsible for 📊
-Kubernetes API server
-Schedular
-Control Manager
-Cloud-Controller Manager 
-Control plane availability and scaling
+# Datadog
+provides infrastructure monitoring, log management, distributed tracing (APM), dashboards, and alerting to improve operational visibility and accelerate troubleshooting.
 
-- Kubernetes Control Plane (scheduling) 🏗️
-Kubernetes API
-Key/Value store
-Kube Schedular
-authorization and authentication permission policies
+# Falco
+provides runtime threat detection by monitoring Kubernetes and Linux system events for suspicious activity, helping identify potential security threats in real time.
 
-- Kubernetes Data Plane (execution) 🔧
-Worker nodes
-kube proxy
-networking paths
-pods and containers
-kubelet
+Together, these tools improve platform observability, reduce mean time to resolution (MTTR), and strengthen the security posture of Kubernetes workloads.
 
+---
+
+# Update kubeconfig ☁️
+
+```bash
+aws eks update-kubeconfig \
+  --region <your-region> \
+  --name <your-cluster-name>
+```
+
+---
+
+# Terraform 🏗️
+
+```bash
+terraform init
+terraform fmt -recursive
+terraform validate
+terraform plan
+terraform apply
+```

@@ -4,10 +4,9 @@ resource "aws_eks_node_group" "default" {
   node_group_name = "eks-ng-default"
   node_role_arn   = aws_iam_role.eks_node_role.arn
   subnet_ids      = aws_subnet.private_subnet[*].id
-
-  ami_type       = "AL2_x86_64"
+  ami_type        = "AL2023_x86_64_STANDARD"
   capacity_type  = "ON_DEMAND"
-  instance_types = ["t3.small"]
+  instance_types = ["t3.xlarge"]
 
   scaling_config {
     desired_size = 6
@@ -33,3 +32,5 @@ resource "aws_eks_node_group" "default" {
     aws_iam_role_policy_attachment.eks_ecr
   ]
 }
+
+

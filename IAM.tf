@@ -262,10 +262,9 @@ resource "aws_iam_instance_profile" "jenkins_profile" {
   role = aws_iam_role.jenkins_role.name
 }
 
-############################################
-# Output
-############################################
-
+###########
+# Outputs
+##########
 output "jenkins_role_arn" {
   value = aws_iam_role.jenkins_role.arn
 }

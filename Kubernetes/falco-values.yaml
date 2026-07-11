@@ -1,0 +1,64 @@
+falco:
+  grpc:
+    enabled: true
+
+  grpcOutput:
+    enabled: true
+
+  jsonOutput: true
+
+  logLevel: info
+
+  priority: debug
+
+  rules_files:
+    - /etc/falco/falco_rules.yaml
+    - /etc/falco/falco_rules.local.yaml
+    - /etc/falco/k8s_audit_rules.yaml
+
+driver:
+  kind: modern_ebpf
+
+collectors:
+  enabled: true
+
+ebpf:
+  enabled: true
+
+falcosidekick:
+  enabled: true 
+
+# DATADOG Configuration
+  config:
+    datadog:
+      host: "https://http-intake.logs.us5.datadoghq.com"
+      apiKey: ""
+
+  extraEnv:
+    - name: DATADOG_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: datadog-secret
+          key: api-key
+
+serviceAccount:
+  create: true
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+tolerations:
+  - operator: Exists
+
+nodeSelector: {}
+
+podSecurityPolicy:
+  create: false
+
+tty: true

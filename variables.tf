@@ -66,9 +66,6 @@ variable "env" {
   type        = string
 }
 
-variable "domain_name" {
-  default = "dev.example.com"
-}
 
 variable "engine" {
   type        = string
@@ -87,12 +84,10 @@ variable "db_username" {
   description = "The database username for IAM authentication."
   type        = string
   sensitive   = true
-  default     = "DMay12345"
 }
 
 variable "db_password" {
   description = "The master password for the database."
   type        = string
   sensitive   = true
-  default     = "admin1234$"
 }

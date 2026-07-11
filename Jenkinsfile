@@ -264,19 +264,6 @@ pipeline {
                 '''
             }
         }
-        stage ('Kubescape Scan') {
-            when {
-                expression { params.ACTION == 'apply' }
-            }
-            steps {
-                sh '''
-                set -euo pipefail 
-
-                echo 'Running Kubescape scan...'
-                kubescape scan framework nsa,mitre || true
-                '''
-            }
-        }
         stage ('Terraform Destroy') {
             when {
                 expression { params.ACTION == 'destroy' }

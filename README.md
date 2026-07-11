@@ -44,3 +44,4 @@ terraform apply
 
 ![image alt](https://github.com/DMayrant/Datadog-Falco-Workloads/blob/main/3-tier-private%20EKS.jpeg?raw=true)
 
+![image alt](https://github.com/DMayrant/Datadog-Falco-Workloads/blob/main/Screenshot%202569-05-20%20at%2001.39.25.png?raw=true)

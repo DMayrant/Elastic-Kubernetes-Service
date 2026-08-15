@@ -4,14 +4,10 @@ Amazon EKS is a fully managed Kubernetes service where AWS manages the Kubernete
 
 EKS is a fully managed service by AWS responsible for managing the Kubernetes Control plane within your Kubernetes cluster. The customer is responsible for the data plane. 
 
-I used Jenkins to automate my Terraform workflow—plan, apply, and validation—and I embedded tfsec and Checkov directly into the pipeline so security checks run before anything gets deployed. That helped catch misconfigurations early and reduce risk in production.
-
 This platform deploys Datadog and Falco using Helm charts to provide centralized observability and Kubernetes runtime threat detection.
 
 # Datadog
 provides infrastructure monitoring, log management, distributed tracing (APM), dashboards, and alerting to improve operational visibility and accelerate troubleshooting.
-
-In the Jenkins pipeline, I integrated multiple security tools like Trivy, Snyk, Checkov, tfsec, and OWASP ZAP. These run at different stages to scan container images, dependencies, and Terraform code for vulnerabilities and misconfigurations.
 
 - AWS is responsible for 📊
 Kubernetes API server
